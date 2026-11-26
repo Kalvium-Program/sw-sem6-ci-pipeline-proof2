@@ -7,7 +7,7 @@ const events = [
 function seatsLeft(id, booked) {
   const event = events.find((e) => e.id === id);
   if (!event) throw new Error(`Unknown event id ${id}`);
-  return Math.max(event.seats - booked, 1);
+  return Math.max(event.seats - booked, 0);
 }
 
 module.exports = { events, seatsLeft };
